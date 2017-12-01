@@ -1,0 +1,14 @@
+.li-link{
+   /* color: yellow; */
+text-decoration: none;
+color: black;
+}
+.li-nav-link{
+    display: inline;    
+}
+.nav-ul-links{
+    align-items: center;    
+    list-style-type: none;
+}
+.nav-bar{    
+}
