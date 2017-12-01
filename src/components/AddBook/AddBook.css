@@ -1,0 +1,88 @@
+
+.AddBook-Container{
+    margin-top: 80px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    background-color: #242325;
+    border-radius: 5px;
+    height: 80%;
+    font-family: 'Open Sans', sans-serif;
+    display: grid;
+    /* grid-template-rows:   1fr 4fr 4fr ; */
+    grid-template-columns:  1fr 1fr;
+
+    
+}
+
+bookname::before{
+    content: 'Title:';
+    font-size:20px;
+    color: #fbffe6;
+}
+bookname{
+    
+}
+authorinput::before{
+    content: 'Author:';
+    font-size:20px;
+    color: #fbffe6;
+}
+authorinput{
+    
+}
+genre::before{
+    content: 'Genre:';
+    font-size:20px;
+    color: #fbffe6;
+}
+genre{
+    
+}
+description::before{
+    content: 'Description:';
+    font-size:20px;
+    color: #fbffe6;
+}
+description{
+    
+}
+imageinput::before{
+    content: 'Img URL:';
+    font-size:20px;
+    color: #fbffe6;
+}
+imageinput{
+    
+}
+.image-preview{
+height:195px;
+width:160px;
+    background-color: #fbffe6;
+    border-radius: 5px;
+}
+.AddBook-Container input{
+    background-color: #fbffe6;
+    border-radius: 5px;
+}
+.AddBook-Container textarea{
+    background-color: #fbffe6;
+    border-radius: 5px;
+}
+.AddBook-Container select{
+    background-color: #fbffe6;
+    border-radius: 5px;
+}
+
+.save-book-link{
+    width: 100px;
+    padding-right: 5px;
+    font-size: 18px;
+    background-color: #a52422;
+    color: #c6b38e;
+    font-family: 'Alegreya', serif;
+    text-decoration: none;  
+    border-radius: 5px;
+    padding: 4px; 
+    text-align: right;
+}

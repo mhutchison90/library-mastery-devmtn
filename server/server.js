@@ -86,7 +86,8 @@ passport.deserializeUser(function (id, done) {
 
 
 // --ENDPOINTS--
-app.get('/api/getBooks', bookController.getAllBooks)
+app.get('/api/getBooks', bookController.getAllBooks);
+app.post('/api/addBook', bookController.addBook);
 
 
 
