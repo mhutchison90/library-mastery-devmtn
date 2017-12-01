@@ -89,7 +89,7 @@ passport.deserializeUser(function (id, done) {
 app.get('/api/getBooks', bookController.getAllBooks);
 app.post('/api/addBook', bookController.addBook);
 app.get('/api/getBooks/:filter', bookController.searchBooks);
-app.get('/api/getBook/:id', bookController.getBook);
+app.delete('/api/boook/delete/:id', bookController.deleteBook);
 
 
 

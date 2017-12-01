@@ -4,11 +4,35 @@ import './Browse.css';
 import { connect } from 'react-redux';
 import { getBooks,setBooksOnRedux } from '../../ducks/reducer';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 
 class Browse extends Component {
+  constructor() {
+    super();
+    this.state = {
+      bookId:''
+    }
+    this.deleteBook = this.deleteBook.bind(this)
+    
+  }
   componentDidMount() {
     this.props.getBooks();
+  }
+  // deleteBook(bookId) {
+  //   const {bookId} = this.state
+  //   axios.post(`/api/deletebook/${bookId}`, {}).then(res => {
+  // })
+  // }
+
+  deleteBook(bookId) {
+    console.log('deleted!')
+    axios.delete('/api/boook/delete/' + bookId)
+      .then(res => {
+        this.setState({
+          test: res.data
+        })
+      })
   }
   render() {
     // console.log('books',this.props.books)
@@ -27,11 +51,11 @@ class Browse extends Component {
               <instock>{book.in_stock ? 'instock' : 'Out Of Stock'}</instock>
               <button> Details</button>
               <Link className='details-link' to={`/details/${book.book_id}`}> link to details</Link>
+              <button onClick={this.deleteBook(book.book_id)}>delete</button>
             </div>
           )
         })}
           <Link className='new-book-link' to='/addbook'>+ Add New Book</Link>
-      
       </div>
     );
   }

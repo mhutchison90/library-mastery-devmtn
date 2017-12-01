@@ -34,5 +34,14 @@ module.exports = {
             db.get_book([params.id])
             .then(response => res.status(200).send(response))
             .catch(() => res.status(500).send());
-    }
+    },
+    deleteBook: (req, res) => {
+        const db = req.app.get('db');
+        const { params } = req;
+    
+        db.delete_user([params.bookId])
+          .then(() => res.status(200).send('BOOK DELETED'))
+          .catch(() => res.status(500).send());
+      }
+
 }
