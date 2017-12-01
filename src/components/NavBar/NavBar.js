@@ -4,7 +4,7 @@ import './NavBar.css';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import { Link } from "react-router-dom";
-
+import tanLogo from '../assets/tan-logo.svg'
 
 
 class NavBar extends Component {
@@ -14,6 +14,7 @@ class NavBar extends Component {
       <div className="NavBar-Container">
         <div className='nav-bar'>
           <ul className='nav-ul-links'>
+          <img src={tanLogo} alt='logo of an open book'/>
             <li className='li-nav-link'> <NavLink className='li-link' exact to='/browse'>Browse</NavLink></li>
             <li className='li-nav-link'> <NavLink className='li-link' exact to='/cart'>Cart</NavLink></li>
             <li className='li-nav-link'> <NavLink className='li-link' exact to='/myshelf'>My Shelf</NavLink></li>

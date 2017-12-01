@@ -1,7 +1,8 @@
 .li-link{
-   /* color: yellow; */
-text-decoration: none;
-color: black;
+    color: #c6b38e;
+    text-decoration: none;
+    font-family: 'Alegreya', serif;
+    font-size: 30px;
 }
 .li-nav-link{
     display: inline;    
@@ -11,4 +12,11 @@ color: black;
     list-style-type: none;
 }
 .nav-bar{    
+    background-color: #020402;
+    height: 100px;
+    
+}
+
+ul img{
+    height: 60px;
 }
