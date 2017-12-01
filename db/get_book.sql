@@ -1,0 +1,1 @@
+Select * from books_m where Book_id = $1;

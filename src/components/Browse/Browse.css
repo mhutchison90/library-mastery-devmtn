@@ -5,6 +5,8 @@
     grid-column-start: 2;
     grid-column-end:   6;
     border-radius: 5px;
+    /* background-size: cover; */
+    height: 100vh;
 }
 
 .Book-Container{

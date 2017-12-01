@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import './Browse.css';
 import { connect } from 'react-redux';
-import { getBooks } from '../../ducks/reducer';
+import { getBooks,setBooksOnRedux } from '../../ducks/reducer';
 import { Link } from "react-router-dom";
 
 
@@ -15,6 +15,7 @@ class Browse extends Component {
     return (
       <div className="Browse-Container">
         <h6>Browse inventory</h6>
+        <input type="checkbox"/>
         {this.props.books.map((book, i) => {
           return (
             <div key={i} className="Book-Container">
@@ -25,6 +26,7 @@ class Browse extends Component {
               <img src={book.image} alt='Image of book cover' />
               <instock>{book.in_stock ? 'instock' : 'Out Of Stock'}</instock>
               <button> Details</button>
+              <Link className='details-link' to={`/details/${book.book_id}`}> link to details</Link>
             </div>
           )
         })}
@@ -38,5 +40,6 @@ class Browse extends Component {
 function mapStateToProps({ books }) {
   return { books };
 }
-
-export default connect(mapStateToProps, { getBooks })(Browse);
+// const mapDispatchToProps = { setBooksOnRedux: setBooksOnRedux  }
+// mapDispatchToProps,
+export default connect(mapStateToProps,  { getBooks })(Browse);

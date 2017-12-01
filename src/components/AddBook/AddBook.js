@@ -40,21 +40,38 @@ class AddBook extends Component {
                       title: e.target.value
                     })
                 }} /></bookname>
-          <authorinput><input /></authorinput>
-          <genre><select>
+          <authorinput><input type='text' value={this.state.author} onChange={(e) => {
+                    this.setState({
+                      author: e.target.value
+                    })
+                }}  /></authorinput>
+          <genre><select value={this.state.genre} onChange={(e) => {
+                    this.setState({
+                      genre: e.target.value
+                    })
+                }}>
             <option value="" selected disabled placeholder='Please select an option...'></option>
             <option value='Childrens'>Childrens</option>
             <option value='Teen'>Teen</option>
             <option value='Romance'>Romance</option>
             <option value='Horror'>Horror</option>
           </select></genre>
-          <description><textarea /> </description>
-          <imageinput><input /></imageinput>
+          <description><textarea type='text' value={this.state.description} onChange={(e) => {
+                    this.setState({
+                      description: e.target.value
+                    })
+                }} /> </description>
+          <imageinput><input type='text' value={this.state.image} onChange={(e) => {
+                    this.setState({
+                      image: e.target.value
+                    })
+                }}  /></imageinput>
           <div className='image-preview'>
             <img src={this.state.image} alt='Preview Image' />
 
           </div>
-            <Link className='save-book-link' to='/addbook'>+ Add Book To Tnventory</Link>
+            <Link className='save-book-link' to='/addbook' onClick={this.saveBook}>+ Add Book To Inventory</Link>
+            {/* <button onClick={this.saveBook}>Save!</button> */}
         </div>
       </div>
     );

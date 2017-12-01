@@ -78,7 +78,7 @@ passport.serializeUser(function (id, done) {
     done(null, id);
 })
 passport.deserializeUser(function (id, done) {
-    app.get('db').find_current_user([id])
+    app.get('db').find_user([id])
         .then(user => {
             done(null, user[0])
         })
@@ -88,6 +88,8 @@ passport.deserializeUser(function (id, done) {
 // --ENDPOINTS--
 app.get('/api/getBooks', bookController.getAllBooks);
 app.post('/api/addBook', bookController.addBook);
+app.get('/api/getBooks/:filter', bookController.searchBooks);
+app.get('/api/getBook/:id', bookController.getBook);
 
 
 

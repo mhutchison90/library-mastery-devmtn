@@ -2,12 +2,34 @@
 import React, { Component } from 'react';
 import './Details.css';
 import { connect } from 'react-redux';
+import { setOneBookOnRedux } from '../../ducks/reducer';
+import axios from 'axios';
+
 
 
 
 class Details extends Component {
-    
-  render() {
+  constructor() {
+    super();
+    this.state = {
+      bookid:''
+    }
+  }
+
+  componentWillMount(){
+    const bookID = this.props.match.params.bookId;
+    this.setState({
+      bookid: this.props.match.params.bookid
+  })
+  console.log(bookID)
+  
+    axios.get(`/api/getBook/${bookID}`)
+    .then(book => {
+      this.props.setOneBookOnRedux(book.data);
+      // console.log(book.data)
+    })
+  }
+    render() {
     return (
       <div className="Details-Container">
 Details
@@ -16,8 +38,11 @@ Details
   }
 }
 
-function mapStateToProps({user}) {
-  return {user};
+function mapStateToProps({user, book}) {
+  return {user, book};
 }
+const mapDispatchToProps = {
+  setOneBookOnRedux: setOneBookOnRedux
+  }
 
-export default connect(mapStateToProps)(Details);
+export default connect(mapStateToProps, mapDispatchToProps)(Details);

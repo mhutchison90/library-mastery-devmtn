@@ -55,6 +55,10 @@ imageinput::before{
 imageinput{
     
 }
+.image-preview img{
+    height: 200px;
+    width: 160px;
+}
 .image-preview{
 height:195px;
 width:160px;
