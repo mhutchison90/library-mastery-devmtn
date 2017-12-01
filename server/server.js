@@ -8,11 +8,6 @@ const express = require('express')
     , Auth0Strategy = require('passport-auth0')
     , bookController = require('./controllers/bookController')
 
-
-/**
- * #ITD
- * const @ConstName = '@AuthRedirectLink';
- */
 const successRedirectVar = '/#/profile';
 const failureRedirectVar = '/auth';
 
@@ -91,11 +86,6 @@ passport.deserializeUser(function (id, done) {
 
 
 // --ENDPOINTS--
-/**
- * #ITD 
- * app.@CrudType('@ApiUrl', @ControllerFileName.@ControllerActionName);
- */
-
 app.get('/api/getBooks', bookController.getAllBooks)
 
 
