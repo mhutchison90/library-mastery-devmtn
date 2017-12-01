@@ -6,10 +6,21 @@ import { connect } from 'react-redux';
 
 
 class AddBook extends Component {
-    
+  constructor() {
+    super();
+    this.state = {
+      title: '',
+      author:'',
+      genre:'',
+      description:'',
+      inStock: false
+    }
+    this.saveBook = this.saveBook.bind(this)
+
+  } 
   render() {
     return (
-      <div className="AddBook-Container">
+      <div className="Browse-Container">
 AddBook
       </div>
     );
