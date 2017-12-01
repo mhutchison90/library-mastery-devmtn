@@ -1,0 +1,35 @@
+.Browse-Container{
+    background-color: #c6b38e;
+    height: 80vh;
+}
+
+.Book-Container{
+    background-color: #fbffe6;
+}
+.book-detail  {
+    font-size: 30px;    
+}
+
+.title {
+
+}
+
+.author {
+
+}
+
+.description {
+
+}
+
+.genre {
+
+}
+
+.book-detail img {
+height: 75px;
+}
+
+.in_stock {
+
+}
