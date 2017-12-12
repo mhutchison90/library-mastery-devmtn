@@ -42,6 +42,16 @@ module.exports = {
         db.delete_user([params.bookId])
           .then(() => res.status(200).send('BOOK DELETED'))
           .catch(() => res.status(500).send());
-      }
+      },
+      editBookTitle: ((req, res, next) => {
+        const db = req.app.get('db');
+        const {title} = req.param;
+    
+        db.put([title])
+        .then(data => {
+            res.status(200).send(req.body)
+        }).catch((err) => res.status(500).send(err, 'you cant put man'))
+    
+    })
 
 }

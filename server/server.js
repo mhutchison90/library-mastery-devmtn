@@ -92,6 +92,9 @@ app.get('/api/getBooks/:filter', bookController.searchBooks);
 app.delete('/api/boook/delete/:id', bookController.deleteBook);
 
 
+app.put('/api/boook/edit', bookController.editBookTitle);
+
+
 
 
 
